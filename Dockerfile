@@ -19,6 +19,7 @@ RUN dpkg-reconfigure locales
 # Python binary dependencies, developer tools
 RUN apt-get install -y -q build-essential make gcc zlib1g-dev git python python-dev python-pip
 RUN apt-get install -y -q libzmq3-dev sqlite3 libsqlite3-dev pandoc libcurl4-openssl-dev nodejs
+RUN apt-get install -y -q python-numpy python-psycopg2
 
 VOLUME /notebooks
 WORKDIR /notebooks
@@ -29,7 +30,7 @@ EXPOSE 9999
 
 # You can mount your own SSL certs as necessary here
 ENV PEM_FILE /key.pem
-ENV PASSWORD Dont make this your default
+ENV PASSWORD panamax
 
 ADD notebook.sh /
 RUN chmod u+x /notebook.sh
