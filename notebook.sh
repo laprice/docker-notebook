@@ -13,4 +13,6 @@ fi
 HASH=$(python -c "from IPython.lib import passwd; print(passwd('${PASSWORD}'))")
 unset PASSWORD
 
+echo "Starting Panamax IPython Notebook"
+
 ipython notebook --no-browser --port 9999 --ip=* --certfile=$PEM_FILE --NotebookApp.password="$HASH"
