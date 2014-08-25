@@ -1,7 +1,7 @@
 # Using the Ubuntu image
 FROM ubuntu:14.04
 
-MAINTAINER IPython Project <ipython-dev@scipy.org>
+MAINTAINER Larry Price <larry@industrialintellect.com>
  
 # Make sure apt is up to date
 RUN apt-get update
@@ -25,7 +25,7 @@ WORKDIR /notebooks
 
 RUN pip install ipython[notebook]
 
-EXPOSE 8888
+EXPOSE 9999
 
 # You can mount your own SSL certs as necessary here
 ENV PEM_FILE /key.pem
